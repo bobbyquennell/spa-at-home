@@ -121,13 +121,19 @@ html, body { height: 80%; margin: 0; padding: 0; }
 
 .flex-col-cross.flex-col-cross-2 { flex-grow: 2; }
 
+.title-sm { font-size: 20px; font-size: 1.25rem; font-family: "Interstate-BoldCond", sans-serif; text-transform: uppercase; color: #231f20; margin: 20px; }
+
+@media only screen and (max-width: 40em) { .title-sm { font-size: 16px; font-size: 1rem; } }
+
+@media only screen and (max-width: 30em) { .title-sm { font-size: 15px; font-size: 0.9375rem; } }
+
 .col-content { margin: 5px; }
 
 @media only screen and (max-width: 40em) { .col-content { margin: 0; } }
 
 .col-content img { width: 100%; }
 
-.col-content h3 { margin-left: 10px; margin-right: 10px; font-size: 20px; font-size: 1.25rem; }
+.col-content h3 { color: #231f20; margin-left: 10px; margin-right: 10px; font-family: "Interstate-BoldCond", sans-serif; text-transform: uppercase; margin: 20px; font-size: 20px; font-size: 1.25rem; }
 
 @media only screen and (max-width: 800px) { .col-content h3 { font-size: 15px; font-size: 0.9375rem; } }
 

@@ -185,7 +185,19 @@ body {
 //=================
 // content
 //=================
-
+.title-sm {
+  @include font-size(20px);
+  @include bp-medium {
+    @include font-size(16px);
+  };
+  @include bp-small {
+    @include font-size(15px);
+  };
+  font-family: $font-boldcond;
+  text-transform: uppercase;
+  color: $black;
+  margin: 20px;
+}
 .col-content {
   margin: 5px;
   @include bp-medium {
@@ -195,8 +207,12 @@ body {
     width: 100%;
   }
   h3 {
+    color: $black;
     margin-left: 10px;
     margin-right: 10px;
+    font-family: $font-boldcond;
+    text-transform: uppercase;
+    margin: 20px;
     @include font-size(20px);
     @include breakpoint(800px) {
       @include font-size(15px);
