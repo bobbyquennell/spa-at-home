@@ -1,306 +1,361 @@
 // In `sass/main.scss`
+// sass-lint:disable quotes mixins-before-declarations
 @import 'mixin';
 @import 'sanitize';
 
 // fonts
-@font-face { font-family: 'Interstate-BlackCond'; src: url("../fonts/Interstate-BlackCond.ttf") format("truetype"); font-weight: normal; font-style: normal; }
-@font-face { font-family: 'Interstate-Bold'; src: url("../fonts/Interstate-Bold.ttf") format("truetype"); font-weight: normal; font-style: normal; }
-@font-face { font-family: 'Interstate-BoldCond'; src: url("../fonts/Interstate-BoldCond.ttf") format("truetype"); font-weight: normal; font-style: normal; }
-@font-face { font-family: 'Interstate-Regular'; src: url("../fonts/Interstate-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face {
+  font-family: 'Interstate-BlackCond';
+  src: url("../fonts/Interstate-BlackCond.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Interstate-Bold';
+  src: url("../fonts/Interstate-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Interstate-BoldCond';
+  src: url("../fonts/Interstate-BoldCond.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face { font-family: 'Interstate-Regular';
+  src: url("../fonts/Interstate-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 // variables
-$font-blackCond: "Interstate-BlackCond", sans-serif; 
-$font-Bold: "Interstate-Bold", sans-serif; 
-$font-BoldCond: "Interstate-BoldCond", sans-serif; 
-$font-reg: "Interstate-Regular", sans-serif; 
+$font-blackcond: 'Interstate-BlackCond', sans-serif;
+$font-bold: "Interstate-Bold", sans-serif;
+$font-boldcond: "Interstate-BoldCond", sans-serif;
+$font-reg: "Interstate-Regular", sans-serif;
 
-$font-title: "Interstate-BlackCond", sans-serif; 
+$font-title: "Interstate-BlackCond", sans-serif;
 $font-copy: 'Open Sans', sans-serif;
 
 $black: #231f20;
 $white: #fff;
-$pink: #d8b3c4;
 
-html, body { height: 100%; margin: 0; padding: 0; }
+html,
+body {
+  height: 80%;
+  margin: 0;
+  padding: 0;
+}
 
-/* ==========================================================================
-	 Author's custom styles
-	 ========================================================================== */
-.landing_page {
-	padding: 0;
-	width: 1070px;
-	margin: 0 auto;
-	padding-top: 30px;
-	color: #333;
-	@include font-size(12px);
-	line-height: 1.5;
-	font-family: $font-copy;
-	font-weight: 400;
-	font-weight: normal;
-	color: $black;
-	text-align: center;
-	strong {
-		font-weight: 600;
-	}
+//==========================================================================
+//  Author's custom styles
+//==========================================================================
 
-	h1,h2,h3,h4, .title, .subtitle, .small_title {
-		font-family: $font-title;
-		text-transform: uppercase;
-		line-height: 100%;
-		margin: 0;
-		font-weight: bold;
-	}
-	h3.stitle {
-		font-family: $font-copy;
-		@include font-size(13.5px);
-		line-height: 130%;
-		margin-bottom: 15px;
-		font-weight: 400;
-	}
+.lp-container {
+  @include font-size(12px);
+  width: 90%;
+  margin: 20px auto;
 
-	.ffblackc {
-		font-family: $font-blackCond !important;
-	}
-	.ffbold {
-		font-family: $font-Bold !important;
-	}
-	.ffboldc {
-		font-family: $font-BoldCond !important;
-	}
-	.ffreg {
-		font-family: $font-reg !important;
-	}
-	a {
-		text-decoration: none;
-	}
-	p {
-		margin: 0;
-	}
-	img {
-		height: auto;
-		max-width: 100%;
-	}
-	sup {
-		position: relative;
-		top: -0.25em;
-		font-size: 70%;
-	}
+  line-height: 1.5;
+  font-family: $font-copy;
+  font-weight: 400;
+  color: $black;
+  text-align: center;
+  h1,
+  h2,
+  h4 {
+    color: $black;
+  }
+  header {
+    position: relative;
+    background: url("../images/bg_header.jpg") no-repeat;
+    background-size: contain;
+    article {
+      padding-top: 30%;
+      //min-height:400px;
+    }
+  }
+  img {
+    &.header-img {
+      width: 100%;
+    }
+  }
 
-	article {
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	section {
-		margin-left: auto;
-		margin-right: auto;
-		clear: both;
-		width: 945px;
-		overflow: hidden;
-		// padding-top: 10px;
-		margin-bottom: 30px;
-		border-bottom: 1px solid #e1e1e1;
-		&.no-border {
-			border-bottom: 0;
-		}
-		&.full-width {
-			width: 1070px; 
-		}
-		p {
-			margin-bottom: 20px;
-			a {
-				text-decoration: none;
-				font-weight: 600;
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-		}
-		.title {
-			letter-spacing: 0.5px;
-			@include font-size(20px);
-			margin-bottom: 20px;
-			span {
-				display: block;
-			}
-			&.no-margin {
-				margin: 0;
-			}
-		}
-	}
-	.container_cta {
-		clear: both;
-	}
-	.cta { 
-		color: $black;
-		text-transform: uppercase;
-		font-family: $font-title;
-		line-height: 38px;
-		height: 38px;
-		clear: both; 
-		letter-spacing: 1px;
-		padding-right: 45px;
-		padding-left: 45px;
-		margin-bottom: 40px;
-		font-weight: normal;
-		display: inline-block;
-		border: 2px solid #000;
-		transition: all 250ms ease-in-out;
-		&:hover {
-			background-color: #000;
-			color: #fff;
-		}
-	}
-	.link {
-		font-weight: 800;
-		text-decoration: none;
-		&:hover {
-			text-decoration: underline;
-		}
-	}
 
-	.center {
-		display: table;
-		width: 100%;
-		.alignMiddle {
-			display: table-cell;
-			vertical-align: middle;
-		}
-	}
-	.underline {
-		text-decoration: underline;
-	}
-	.clear {
-		clear: both;
-	}
-	.col {
-		float: left;
-		width: 50%;
-		img {
-			display: block;
-		}
-		p:last-child {
-			margin-bottom: 5px;
-		}
-	}
-	.mb-fix {
-		margin-bottom: 30px;
-	}
-	.alignMiddle {
-		height: 266px;
-		p {
-			padding: 0 25px;
-			margin-bottom: 10px;
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
-	}
-	.maxwidth {
-		max-width: 780px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.bold {
-		font-size: 115%;
-		font-weight: 600;
-		&.lrg {
-			padding-top: 3px;
-			font-size: 115%;
-			line-height: 125%;
-			span {
-				display: block;
-			}
-		}
-	}
+}
 
-	header {
-		margin-left: auto;
-		margin-right: auto;
-		position: relative;
-		margin-bottom: 20px;
-		border-bottom: 1px solid transparent;
-		width: 945px;
-		background: url(../images/bg_header.jpg) center top no-repeat;
-		article {
-			padding-top: 290px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		.h1 {
-			margin-bottom: 15px;
-			@include font-size(83px);
-			line-height: 95%;
-			span {
-				display: block;
-				line-height: 95%;
-			}
-		}
-		.title {
-			@include font-size(23px);
-			margin-bottom: 20px;
-		}
-		p {
-			width: 780px;
-			margin-left: auto;
-			margin-right: auto;
-			margin-bottom: 20px;
-		}
-	}
-	
-	ul.list {
-		overflow: hidden;
-		width: 858px;
-		margin-left: auto;
-		margin-right: auto;
-		li {
-			vertical-align: top;
-			display: inline-block;
-			width: 33%;
-			> div {
-				margin: 0 9px;
-			}
-		}
-		&.list-4 {
-			width: 1060px;
-			li {
-				vertical-align: top;
-				display: block;
-				float: left;
-				width: 25%;
-				> div {
-					margin: 0 1px;
-				}
-			}
-			.caption {
-				height: 140px;
-			}
-		}
-		figure {
-			margin-bottom: 17px;
-		}
-		img {
-			display: block;
-		}
-		.title {
-			@include font-size(20px);
-			margin-bottom: 15px;
-			padding: 0 15px;
-		}
-		.tagline {
-			font-size: 110%;
-			strong {
-				font-weight: 600;
-			}
-			font-size: 100%;
-			padding: 0 10px;
-		}
-		em {
-			font-style: italic;
-		}
-		p {
-			padding: 0 5px;
-			margin-bottom: 0;
-		}
-	}
+//=================
+// header
+//=================
+
+
+.header-title {
+
+  top: 280px;
+  background-color: $white;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  .header-title-lg {
+    @include font-size(60px);
+    @include bp-medium {
+      @include font-size(40px);
+    };
+    @include bp-small {
+      @include font-size(30px);
+    };
+    font-family: $font-blackcond;
+    margin: 10px 10px;
+
+  }
+  .header-title-sm {
+    @include font-size(30px);
+    @include bp-medium {
+      @include font-size(25px);
+    };
+    @include bp-small {
+      @include font-size(20px);
+    };
+    font-family: $font-boldcond;
+    text-transform: uppercase;
+    margin: 10px 10px;
+  }
+
+  .header-tagline {
+    margin: 20px auto;
+    line-height: 1.5;
+    max-width: 100%;
+    a {
+      color: $black;
+      &:link,
+      &:visited,
+      &:hover,
+      &:active {
+        color: $black;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+//==================
+// flex box layout
+//=================
+.flex-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  @include bp-medium {
+    flex-wrap: wrap;
+  };
+}
+.flex-col {
+  order: 1;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 25%;
+  @include bp-medium {
+    flex-basis: 100%;
+    flex-shrink: 0;
+  };
+}
+.flex-grid-cross {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  // align-items: flex-end;
+  // flex-wrap: nowrap;
+  // @include bp-medium {
+  //   flex-wrap: wrap;
+  // };
+}
+.flex-col-cross {
+  order: 1;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 25%;
+  @include bp-medium {
+    flex-basis: 100%;
+    flex-shrink: 0;
+  };
+  &.flex-col-cross-2 {
+    flex-grow: 2;
+  }
+}
+//=================
+// content
+//=================
+
+.col-content {
+  margin: 5px;
+  img {
+    width: 100%;
+  }
+  h3 {
+    margin-left: 10px;
+    margin-right: 10px;
+    @include font-size(20px);
+    @include breakpoint(800px) {
+      @include font-size(15px);
+    };
+  }
+  a {
+    color: $black;
+    display: inline-block;
+    margin-bottom: 20px;
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      font-family: $font-copy;
+      font-weight: 600;
+      @include font-size(14px);
+      text-decoration: none !important;
+    }
+    &.cta {
+      border: solid 2px $black;
+      padding: 5px 15px;
+      // margin-top: 20px;
+      }
+
+  }
+  p {
+    &.col-content-details {
+      height: 100px;
+      @include bp-large {
+        height: 150px;
+      }
+      @include bp-medium {
+        height: 70px;
+      }
+    }
+  }
+
+}
+.grid-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.row {
+  max-width: 100%;
+  margin: auto;
+  height: 100%;
+  position: relative;
+  img {
+    width: 100%;
+  }
+}
+
+
+.col {
+  @include bp-medium {
+    width: 100%;
+    float: none;
+  };
+  width: 50%;
+  float: left;
+  min-height: 1px;
+  position: relative;
+  &:first-child {
+    clear: both;
+  }
+  &.col-right {
+    float: right;
+    @include bp-medium {
+      float: none;
+    };
+  }
+  .col-content {
+    position: relative;
+    img {
+      width: 100%;
+      @include bp-large {
+        height: 100%;
+        // width: 80%;
+      };
+      @include bp-medium {
+        height: 100%;
+        // width: 80%;
+      };
+      // @include bp-small {
+      //   height: 180px;
+      // };
+      // &:hover {
+      //   cursor: pointer;
+      // }
+      // height: 268px;
+    }
+    .play {
+      position: absolute;
+      top: 39%;
+      left: 44%;
+      width: 11% !important;
+      height: 23% !important;
+      opacity: .6;
+      transition: 300ms ease-in-out;
+    }
+
+  }
+}
+.lp-story {
+  padding: 5% 10%;
+  @include bp-large {
+    padding: 5%;
+  };
+  line-height: 1.5;
+  h4 {
+    color: $black;
+    font-family: $font-boldcond;
+    @include font-size(15px);
+    margin: 3% auto;
+    text-transform:none;
+  }
+  p {
+      margin: 3% auto;
+      padding-top: 2%;
+    &.watch {
+          font-family: $font-copy;
+          font-weight: 600;
+          @include font-size(14px);
+        }
+      a {
+        color: $black;
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+          font-family: $font-copy;
+          font-weight: 600;
+          @include font-size(14px);
+          color: $black !important;
+          text-decoration: underline !important;
+        }
+
+  }
+
+}
+}
+
+//===============
+// video
+//===============
+.cta:hover {
+  cursor: pointer;
+  .play {
+    opacity: 1;
+  }
+}
+.video-wrapper {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
 }
